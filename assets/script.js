@@ -1,79 +1,25 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-console.log(addEmployeesBtn);
 
-  
-
-addEmployeesBtn.addEventListener('click', function() {
-const userInput = prompt('first name');
-console.log(userInput); 
-return;
-
+addEmployeesBtn.addEventListener('click', function(){
+ 
 })
 
-
-
-addEmployeesBtn.addEventListener('click', function() {
-  const userInput = prompt('last name');
-  console.log(userInput); 
-  return;
-  
-  })
-
-
-  addEmployeesBtn.addEventListener('click', function() {
-    const userInput = prompt('salary');
-    console.log(userInput); 
-    return;
-    
-    })
-
-
-
-
-
-// TODO: Get user input to create and return an array of employee objects
 // Collect employee data
-
-//when user clicks
-//prompt page
-
-
-
-
-
-
-
-
-
-
+const collectEmployees = function() {
+  const employeesArray = [];
+  // TODO: Get user input to create and return an array of employee objects
+}
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
 }
 
-
-
-
-
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
