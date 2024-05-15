@@ -1,10 +1,24 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+//pull this out into its own function and make a while loop
+
 addEmployeesBtn.addEventListener("click", function () {
-  const firstName = prompt ("Please input employee's first name");
-  const lastName = prompt ("Please input employee's last name");
-  const salary = prompt ("Please input employee's salary");
+  const firstName = prompt("Please input employee's first name");
+  if (firstName === null) {
+    return;
+  }
+  const lastName = prompt("Please input employee's last name");
+  if (lastName === null) {
+    return;
+  }
+  const salary = prompt("Please input employee's salary");
+  if (salary === null) {
+    return;
+  }
+  if (salary) {
+    ///this is where the continue cancel goes
+  }
   console.log(firstName, lastName, salary);
 });
 
