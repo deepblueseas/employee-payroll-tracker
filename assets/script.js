@@ -16,11 +16,15 @@ addEmployeesBtn.addEventListener("click", function () {
   if (salary === null) {
     return;
   }
-  if (salary) {
-    ///this is where the continue cancel goes
+  const addAnother = confirm("Would you like to add another employee?");
+  if (!addAnother) {
+    return;
   }
+
   console.log(firstName, lastName, salary);
-});
+}); 
+  
+
 
 
 // Collect employee data
