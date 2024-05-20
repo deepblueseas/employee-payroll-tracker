@@ -4,33 +4,61 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 //pull this out into its own function and make a while loop
 
 addEmployeesBtn.addEventListener("click", function () {
-  const firstName = prompt("Please input employee's first name");
+  const employeesArray = collectEmployees();
+  console.log(employeesArray);
+});
+
+function employeeInput(promptMessage) {
+  const firstName = employeeInput("firstname")
   if (firstName === null) {
     return;
   }
-  const lastName = prompt("Please input employee's last name");
+  const lastName = employeeInput("Please input employee's last name");
   if (lastName === null) {
     return;
   }
-  const salary = prompt("Please input employee's salary");
+  const salary = employeeInput("Please input employee's salary");
   if (salary === null) {
     return;
   }
-  const addAnother = confirm("Would you like to add another employee?");
+  const addAnother = employeeInput("Would you like to add another employee?");
   if (!addAnother) {
     return;
   }
+  console.log(employeeInput);
 
-  console.log(firstName, lastName, salary);
-}); 
-  
+}
 
 
 
 // Collect employee data
 const collectEmployees = function () {
+
+
+  console.log(employeesArray);
+  return employeesArray;
   // TODO: Get user input to create and return an array of employee objects
-}
+};
+
+
+//   const firstName = prompt("Please input employee's first name");
+//   if (firstName === null) {
+//     return;
+//   }
+//   const lastName = prompt("Please input employee's last name");
+//   if (lastName === null) {
+//     return;
+//   }
+//   const salary = prompt("Please input employee's salary");
+//   if (salary === null) {
+//     return;
+//   }
+//   const addAnother = confirm("Would you like to add another employee?");
+//   if (!addAnother) {
+//     return;
+//   }
+//   console.log(firstName, lastName, salary);
+
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
