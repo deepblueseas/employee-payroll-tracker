@@ -1,33 +1,30 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-//pull this out into its own function and make a while loop
+
 
 addEmployeesBtn.addEventListener("click", function () {
-  const employeesArray = collectEmployees();
-  console.log(employeesArray);
+  // const employeesArray = collectEmployees();
+  // console.log(employeesArray);
+
+
 });
 
 function employeeInput(promptMessage) {
-  const firstName = employeeInput("firstname")
-  if (firstName === null) {
-    return;
-  }
-  const lastName = employeeInput("Please input employee's last name");
-  if (lastName === null) {
-    return;
-  }
-  const salary = employeeInput("Please input employee's salary");
-  if (salary === null) {
-    return;
-  }
-  const addAnother = employeeInput("Would you like to add another employee?");
-  if (!addAnother) {
-    return;
-  }
-  console.log(employeeInput);
+  let input; // do...while 'creates a loop that executes a specified statement as long as test condit is true' -mdn wed docs
+  do {
+    input = prompt(promptMessage);
+    if (input === null) {
+      return null;
+    }
+    if (input.trim() === ""); { //if user inputs nothing, prompt alert
+      alert("please input some data");
+    }
 
-}
+  } while (input.trim() === "true");
+  return input;
+
+};
 
 
 
@@ -35,8 +32,7 @@ function employeeInput(promptMessage) {
 const collectEmployees = function () {
 
 
-  console.log(employeesArray);
-  return employeesArray;
+
   // TODO: Get user input to create and return an array of employee objects
 };
 
