@@ -5,17 +5,23 @@ addEmployeesBtn.addEventListener("click", function () {
   collectEmployees();
 });
 
-const employeesArray = [];
 
+const employeesArray = [];
 // Collect employee data
 const collectEmployees = function () {
+  
   while (true) {
     // i realize this probably should only run at the end, but this is what i was able to get working the best
     let addEmployees = window.confirm(
       "Would you like to add another employee?"
     );
     if (!addEmployees) {
-      return;
+      employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+      // Display sorted employee data alphabetical by last name
+      displayEmployees(employeesArray);
+      displayAverageSalary(employeesArray);
+      getRandomEmployee(employeesArray);
+      break;
     }
 
     const firstName = prompt("Please input employee's first name");
@@ -30,7 +36,9 @@ const collectEmployees = function () {
 
     let salary;
     while (true) {
-      salary = prompt("Please input employee's salary without including the dollar sign");
+      salary = prompt(
+        "Please input employee's salary without including the dollar sign"
+      );
       if (salary === null) {
         return;
       }
@@ -40,7 +48,7 @@ const collectEmployees = function () {
       if (!isNaN(salaryNumber)) {
         break;
       } else {
-        alert("Please enter a valid number");
+        alert("Please enter a valid number without a dollar sign");
       }
     }
 
@@ -53,12 +61,21 @@ const collectEmployees = function () {
     employeesArray.push(employee);
 
     console.log(employee);
+    console.log(employeesArray);
+
+    return employeesArray;
   }
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
+  let salaryTotal = 0;
+  for (let i = 0; i < employeesArray.length; i++) {
+    salaryTotal += employeesArray[i].salary;
+  }
   // TODO: Calculate and display the average salary
+  const averageSalary = salaryTotal / employeesArray.length;
+  console.log("Average Employee Salary:", averageSalary.toFixed(2));
 };
 
 // Select a random employee
