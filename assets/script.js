@@ -5,15 +5,17 @@ addEmployeesBtn.addEventListener("click", function () {
   collectEmployees();
 });
 
-const employeesArray= [];
+const employeesArray = [];
 
 // Collect employee data
 const collectEmployees = function () {
-
   while (true) {
-    let addEmployees = window.confirm("Would you like to add another employee?");
+    // i realize this probably should only run at the end, but this is what i was able to get working the best
+    let addEmployees = window.confirm(
+      "Would you like to add another employee?"
+    );
     if (!addEmployees) {
-      break;
+      return;
     }
 
     const firstName = prompt("Please input employee's first name");
@@ -26,17 +28,26 @@ const collectEmployees = function () {
       return;
     }
 
-    const salary = prompt("Please input employee's salary");
-    if (salary === null) {
-      return;
+    let salary;
+    while (true) {
+      salary = prompt("Please input employee's salary without including the dollar sign");
+      if (salary === null) {
+        return;
+      }
 
-      
+      // maintain decimal points versus parseint
+      const salaryNumber = parseFloat(salary);
+      if (!isNaN(salaryNumber)) {
+        break;
+      } else {
+        alert("Please enter a valid number");
+      }
     }
 
     const employee = {
       firstName: firstName,
       lastName: lastName,
-      salary: salary,
+      salary: parseFloat(salary),
     };
 
     employeesArray.push(employee);
@@ -44,7 +55,6 @@ const collectEmployees = function () {
     console.log(employee);
   }
 };
-
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
