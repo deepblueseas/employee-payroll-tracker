@@ -1,59 +1,37 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
-
-
 addEmployeesBtn.addEventListener("click", function () {
-  // const employeesArray = collectEmployees();
-  // console.log(employeesArray);
-
-
+  let addEmployees = true;
+  while (addEmployees) {
+    const firstName = prompt("Please input employee's first name");
+    if (firstName === null) {
+      return;
+    }
+    const lastName = prompt("Please input employee's last name");
+    if (lastName === null) {
+      return;
+    }
+    const salary = prompt("Please input employee's salary");
+    if (salary === null) {
+      return;
+    }
+ 
+  console.log(firstName, lastName, salary);
+  addEmployees = window.confirm("Would you like to add another employee?") 
+}
 });
 
-function employeeInput(promptMessage) {
-  let input; // do...while 'creates a loop that executes a specified statement as long as test condit is true' -mdn wed docs
-  do {
-    input = prompt(promptMessage);
-    if (input === null) {
-      return null;
-    }
-    if (input.trim() === ""); { //if user inputs nothing, prompt alert
-      alert("please input some data");
-    }
 
-  } while (input.trim() === "true");
-  return input;
-
-};
 
 
 
 // Collect employee data
 const collectEmployees = function () {
 
-
-
   // TODO: Get user input to create and return an array of employee objects
 };
 
-
-//   const firstName = prompt("Please input employee's first name");
-//   if (firstName === null) {
-//     return;
-//   }
-//   const lastName = prompt("Please input employee's last name");
-//   if (lastName === null) {
-//     return;
-//   }
-//   const salary = prompt("Please input employee's salary");
-//   if (salary === null) {
-//     return;
-//   }
-//   const addAnother = confirm("Would you like to add another employee?");
-//   if (!addAnother) {
-//     return;
-//   }
-//   console.log(firstName, lastName, salary);
 
 
 // Display the average salary
@@ -65,6 +43,10 @@ const displayAverageSalary = function (employeesArray) {
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
 }
+
+
+/*
+
 
 /*
   ====================
