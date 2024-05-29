@@ -1,19 +1,20 @@
 # Employee Payroll Tracker
 
-### User Story Summary from Bootcampspot Prompt
+### USER STORY/Description 
+### As a payroll manager:
 
--WHEN I click "Add employee" <br>
-&nbsp;&nbsp;&nbsp;&nbsp;--presented with prompts: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---"first name, last name, salary" <br>
+1. WHEN I click "Add employee" <br>
+THEN I am presented with prompts: <br>
+&nbsp;&nbsp; *first name, last name, salary"* <br>
 
--WHEN I finish adding an employee <br>
-&nbsp;&nbsp;&nbsp;&nbsp;--prompted: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---"continue" or "cancel" <br>
+2. WHEN I finish adding an employee <br>
+THEN I am prompted: <br>
+&nbsp;&nbsp;*"continue" or "cancel"* <br>
 
--WHEN I choose "continue" <br>
-&nbsp;&nbsp;&nbsp;&nbsp;--prompted: <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;---"add a new employee" <br>
+3. WHEN I choose "continue" <br>
+THEN I am prompted: <br>
+&nbsp;&nbsp;*"add a new employee"* <br>
 
--WHEN I choose "cancel" <br>
-&nbsp;&nbsp;&nbsp;&nbsp;--Then employee data displays on the page sorted alphabetically by lastname. The console shows computed and aggregated data. <br>
+4. WHEN I choose "cancel" <br>
+THEN I see the employee data displayed on the page sorted alphabetically by lastname, and the console shows computed and aggregated data. <br>
 
