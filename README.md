@@ -19,7 +19,7 @@ THEN I am prompted: <br>
 THEN I see the employee data displayed on the page sorted alphabetically by lastname, and the console shows computed and aggregated data. <br>
 
 ### Notes:
-Some of the code it glitchy where I am running the window.confirm, but overall, I'm satified enough to let this project go and move onto the next.
+Some of the code is glitchy where I am running the window.confirm, but overall, I'm satified enough to let this project go and move onto the next.
 
 ### source code credit:
 https://github.com/coding-boot-camp/curly-potato/tree/main
