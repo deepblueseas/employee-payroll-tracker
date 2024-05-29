@@ -1,12 +1,14 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
+//when the addEmployeesBtn is clicked, the collectEmployees function runs
 addEmployeesBtn.addEventListener("click", function () {
   collectEmployees();
 });
 
-
+//setting this as an empty array 
 const employeesArray = [];
+
 // Collect employee data
 const collectEmployees = function () {
   
@@ -15,9 +17,11 @@ const collectEmployees = function () {
     let addEmployees = window.confirm(
       "Would you like to add another employee?"
     );
+    // if user clicks cancel, all of this is logged
     if (!addEmployees) {
-      employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
       // Display sorted employee data alphabetical by last name
+      employeesArray.sort((a, b) => a.lastName.localeCompare(b.lastName));
+      //passes the employeesArray into these functions that we'll use later
       displayEmployees(employeesArray);
       displayAverageSalary(employeesArray);
       getRandomEmployee(employeesArray);
@@ -34,6 +38,7 @@ const collectEmployees = function () {
       return;
     }
 
+    //this ensures user is inputting numbers only in this section so we can run math later
     let salary;
     while (true) {
       salary = prompt(
@@ -43,7 +48,7 @@ const collectEmployees = function () {
         return;
       }
 
-      // maintain decimal points versus parseint
+      // maintain decimal points with parseFloat versus parseInt
       const salaryNumber = parseFloat(salary);
       if (!isNaN(salaryNumber)) {
         break;
@@ -52,35 +57,51 @@ const collectEmployees = function () {
       }
     }
 
+    //creating our employee object to populate the employeesArray
     const employee = {
       firstName: firstName,
       lastName: lastName,
       salary: parseFloat(salary),
     };
 
+    //adding each employee object input by user into the empArray
     employeesArray.push(employee);
 
+    //these were mostly for me to figure out where I was having trouble with a var that couldn't be read
     console.log(employee);
     console.log(employeesArray);
 
-    return employeesArray;
+    
   }
+  
+  //make this array accessible outside of the function so we can use the user input in the next functions!
+  return employeesArray;
 };
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   let salaryTotal = 0;
   for (let i = 0; i < employeesArray.length; i++) {
+    //access the employees array and then the salary and the above line will continue to loop over the empArray length adding the salaries together
     salaryTotal += employeesArray[i].salary;
   }
   // TODO: Calculate and display the average salary
+  //this takes the salary total we just got and divides it by the total array length to get the average
   const averageSalary = salaryTotal / employeesArray.length;
+  //the toFixed(2) is to display out two decimal points, standard for money/salaries
   console.log("Average Employee Salary:", averageSalary.toFixed(2));
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  if (employeesArray.length === 0) return;
+  //here we are generating a random array number
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  //here we are pulling out the object assigned to that array position if I am correct in my wording
+  //the object is the Employee object we set up in the collectEmployees function
+  const randomEmployee = employeesArray[randomIndex];
+  console.log("Random Employee:", randomEmployee);
 };
 
 /*
